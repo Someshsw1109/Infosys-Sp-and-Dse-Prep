@@ -38,6 +38,9 @@ class Solution:
         res = []
         for node in queries:
             L = level[node]
-            temp = L + (Level_ka_second_maximum_height[L] if Level_ka_maximum_height[L] == height[node] else Level_ka_maximum_height[L]) - 1
+            x = Level_ka_second_maximum_height[L]
+            y = Level_ka_maximum_height[L]
+            H = x if y == height[node] else y
+            temp = L + H - 1
             res.append(temp)
         return res
